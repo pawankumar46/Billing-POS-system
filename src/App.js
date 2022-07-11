@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React , {useEffect, useState} from 'react'
+import NavBar from './components/NavBar';
 
-function App() {
+function App(props) {
+   const [toggle ,setToggle] = useState(false)
+
+    const handleAuth=()=>{
+       setToggle(!toggle)
+    }
+
+     useEffect(()=>{
+      if ( localStorage.getItem('token')) {
+        handleAuth()
+      }
+       
+     },[ ])
+     // eslint-disable-next-line
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+       <div >
+       <h2 style={{textAlign : 'center'}}>Billing App</h2>
+       <NavBar  toggle={toggle} handleAuth={handleAuth} />
+       </div>
+      
+    
   );
 }
 
