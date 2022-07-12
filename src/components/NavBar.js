@@ -5,7 +5,7 @@ import Register from './Register';
 import Login from './Login';
 import Account from './Account';
 import CustomerContainer from './CustomerContainer';
-import Products from './Products';
+import ProductContainer from './ProductContainer';
 import '../styles.css'
 
 const NavBar = (props) => {
@@ -45,7 +45,7 @@ const NavBar = (props) => {
              return <Login {...props} handleAuth={handleAuth} />
           }}  />
           <Route   path='/account' component={Account} />
-          <Route   path='/products' component={Products}/>
+          <Route   path='/products' component={ProductContainer}/>
           <Route  path='/customer' component={CustomerContainer} />
     </div>
     </div>

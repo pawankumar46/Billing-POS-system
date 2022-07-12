@@ -19,9 +19,9 @@ const Account = (props) => {
     <div className='p-5'>
         <h2> User Info  </h2>
     </div>
-    <div className='col-md-8'>
-        <h3>Account -- {users.username}</h3>
-        <h3> Email  -- {users.email}</h3>
+    <div className='text-center'>
+        <h3>Admin  -- {users.username}</h3>
+        <h3>Email  -- {users.email}</h3>
          
     </div>
     </div>    
