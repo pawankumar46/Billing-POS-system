@@ -3,9 +3,10 @@ import { useFormik } from 'formik'
 
 import { useDispatch } from 'react-redux'
 import { startPostCust } from '../actions/customerAction'
+import { startEditCus } from '../actions/customerAction'
 
 const Customer = (props) => {
-   const {handleToggle , _id : slNo , name : nam , mobile : phone , email : info} = props
+   const {handleToggle , _id  , name : nam , mobile : phone , email : info} = props
    const dispatch = useDispatch()
  const formik = useFormik({
   initialValues : {
@@ -16,8 +17,9 @@ const Customer = (props) => {
    onSubmit : (formData , {resetForm})=>{
       console.log(formData)
 
-       if (slNo || nam || info){
-         dispatch()
+       if ( nam || info){
+         dispatch(startEditCus(formData, _id))
+          handleToggle()
        } else {
         dispatch(startPostCust(formData))
         resetForm()

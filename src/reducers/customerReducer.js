@@ -9,6 +9,15 @@ const customerReducer=(state= initialReducer , action)=>{
         case "POST_CUS" : {
             return [{...action.payload} , ...state]
         }
+        case 'EDIT_CUS': {
+             return  state.map((ele)=>{
+                if(ele._id === action.payload._id){
+                    return {...ele ,...action.payload}
+                } else {
+                   return  {...ele}
+                }
+             })
+        }
         case 'DELETE_CUS' : {
              return state.filter((ele)=>{
                 return ele._id !== action.payload

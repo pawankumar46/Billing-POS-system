@@ -1,6 +1,7 @@
 import axios from "axios";
  
 const token = localStorage.getItem('token')
+
 export const startPostCust=(data)=>{
     return(dispatch)=>{
         axios.post(`http://dct-pos-app.herokuapp.com/api/customers` , data  , {
@@ -88,5 +89,35 @@ export const deleteCus=(id)=>{
     return {
         type : 'DELETE_CUS' ,
         payload : id
+    }
+}
+
+// To Edit/ Update customers
+
+export const startEditCus=(formData , id)=>{
+    return(dispatch)=>{
+       axios.put(`http://dct-pos-app.herokuapp.com/api/customers/${id}`, formData , {
+        headers : {
+            'Authorization' : `Bearer ` + token
+        }
+       })
+       .then((res)=>{
+         const result = res.data
+          if(result.hasOwnProperty('errors')){
+            alert(result.message)
+          } else {
+             dispatch(editCustomer(result))
+          }
+       })
+       .catch((err)=>{
+         alert(err.message)
+       })
+    }
+}
+
+export const editCustomer=(data)=>{
+    return {
+        type : 'EDIT_CUS',
+        payload : data
     }
 }
