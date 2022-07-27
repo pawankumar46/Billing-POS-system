@@ -1,3 +1,40 @@
 .navbar-font{
     font-size: 20px;
+    word-spacing: 60px;
+    text-shadow: 0 0 3px #0b13816e;
 }
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .topright {
+    position: absolute;
+    direction: ltr; 
+    right: 20px;
+    font-size: 18px;
+  }
+
+  .button{
+    display: flex;
+    justify-content: flex-end;
+     
+  }
+
+  /* .button {
+    line-height: 12px;
+    width: 18px;
+    font-size: 8pt;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-right: 2px;
+    position:absolute;
+    top:0;
+    right:0;
+} */

@@ -13,13 +13,19 @@ function App(props) {
         handleAuth()
       }
        
-     },[ ])
+     },[])
      // eslint-disable-next-line
   return (
     
        <div >
-       <h2 style={{textAlign : 'center'}}>Billing App</h2>
+         <div className='bg-light text-center  p-2'>
+         <h2>Billing App</h2>
+         </div>
+         <hr className='mx-5'/>
+       <div>
        <NavBar  toggle={toggle} handleAuth={handleAuth} />
+       </div>
+       
        </div>
       
     

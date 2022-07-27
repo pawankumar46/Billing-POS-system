@@ -2,18 +2,26 @@ import React from 'react'
 import { useFormik } from 'formik'
 import { useDispatch } from 'react-redux'
 import { startPostProduct } from '../actions/productAction'
+import { startEditProduct } from '../actions/productAction'
 
 const Products = (props) => {
+  const {_id , handleToggle , name : nam , price : cost } = props
    const dispatch = useDispatch()
    const formik = useFormik({
      initialValues : {
-        name : '',
-        price : ''
+        name : nam ? nam : '',
+        price : cost ? cost : ''
      },
      onSubmit : (formData, {resetForm})=>{
          console.log(formData)
+         if (nam || cost){
+           dispatch(startEditProduct(formData , _id))
+            handleToggle()
+         } else {
           dispatch(startPostProduct(formData))
-           resetForm()
+          resetForm()
+         }
+         
      }
    })
   return (

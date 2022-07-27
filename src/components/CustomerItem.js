@@ -32,6 +32,7 @@ const CustomerItem = (props) => {
            </>
 ) : (
   <div>
+    <React.Fragment>
          
   <h5>Name - {name}</h5>
   <p>Mobile -{mobile}</p>
@@ -41,7 +42,7 @@ const CustomerItem = (props) => {
   }}><i className="bi bi-trash3-fill"></i></button>
   <button className='btn btn-4' onClick={handleToggle}><i className="bi bi-pencil-fill"></i></button>
   
- 
+  </React.Fragment>
 </div>
 )}
     </div>

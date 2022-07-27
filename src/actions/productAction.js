@@ -61,3 +61,63 @@ export const getProduct=(data)=>{
         payload : data
     }
 }
+
+// Delete Products
+
+export const startDeleteProduct=(id)=>{
+    return(dispatch)=>{
+        axios.delete(`http://dct-pos-app.herokuapp.com/api/products/${id}` ,{
+            headers : {
+                'Authorization' : `Bearer ` + token
+            }
+        })
+        .then((res)=>{
+            const result = res.data
+            if (result.hasOwnProperty('errors')){
+                alert(result.message)
+            } else {
+                dispatch(deleteProduct(result))
+            }
+        })
+        .catch((err)=>{
+            alert(err.message)
+        })
+    }
+}
+
+export const deleteProduct=(data)=>{
+     return {
+        type : 'DELETE_PRODUCT',
+        payload : data
+     }
+}
+
+// Editing / Update Products
+
+export const startEditProduct=(data , id)=>{
+    return(dispatch)=>{
+        axios.put(`http://dct-pos-app.herokuapp.com/api/products/${id}` , data , {
+            headers : {
+                'Authorization' : `Bearer ` + token
+            }
+        })
+        .then((res)=>{
+            const result = res.data
+            if(result.hasOwnProperty('errors')){
+                alert(result.message)
+            } else {
+                dispatch(editProducts(result))
+            }
+        })
+        .catch((err)=>{
+            alert(err.message)
+        })
+    }
+}
+
+export const editProducts=(data)=>{
+    return {
+        type : 'EDIT_PRODUCTS',
+        payload : data
+    }
+}

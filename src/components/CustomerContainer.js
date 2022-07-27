@@ -13,11 +13,14 @@ const CustomerContainer = (props) => {
        
 
         <div className='col-md-8'>
-        <>
-        <CustomerList/>
-        </>
 
-         </div>
+          <div className='flex'>
+            <div className='col-lg-12'>
+            <CustomerList/>
+            </div>
+          
+          </div>
+        </div>
        
     </div>
   )

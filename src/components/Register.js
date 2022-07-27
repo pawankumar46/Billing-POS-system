@@ -3,27 +3,28 @@ import axios from 'axios'
 import {useFormik} from 'formik'
 import * as Yup from 'yup'
 import swal from 'sweetalert'
+import '../styles.css'
  
  const registerSchema = Yup.object().shape({
     username : Yup.string()
          .min(4)
          .max(20)
-         .required("Required...!!") ,
+         .required(<strong>Username must be provided..!</strong>) ,
      email : Yup.string()
          .email()
-          .required(`Required..!`) ,
+          .required(<strong>Email must be provided..!</strong>) ,
      password : Yup.string()
            .min(8)
            .max(64)
-           .required(`Required..!`) ,
+           .required(<strong>Password must be provided..!</strong>) ,
      businessName : Yup.string()
            .min(6)
-            .max(12)
-            .required(`Required...!`) ,
+            .max(30)
+            .required(<strong>Business Name must be provided..!</strong>) ,
      address  : Yup.string()
             .min(10)
             .max(30)
-            .required(`Required..!!`)
+            .required(<strong>Address must be provided..!</strong>)
 
  })
 const Register = (props) => {
@@ -61,37 +62,49 @@ const Register = (props) => {
          
 
     })
+
+     const handleBack=()=>{
+       props.history.push('/')
+     }
   return (
-     <div className='row my-5'>
+     <div className='justify-content-center m-3'>
         <h2>Register with Us</h2>
     
-    <div className=' col-md-4'>
+    <div className='container'>
+    <div className='border' >
        
 
          <form onSubmit={formik.handleSubmit} >
 
             <label>User-Name</label>  <br/>
             <input type='text' placeholder='Enter your Name' name='username' value={formik.values.username} 
-            onChange={formik.handleChange}/>   <br/> <span>{formik.errors.username}</span> <br/> 
+            onChange={formik.handleChange}/>   <br/> <strong><span className='text-danger'>{formik.errors.username}</span></strong> <br/> 
 
              <label>Email</label>  <br/>
             <input type='text' placeholder='Enter your Email' name='email' value={formik.email} 
-            onChange={formik.handleChange}/>  <br/> <span>{formik.errors.email}</span> <br/> 
+            onChange={formik.handleChange}/>  <br/> <strong><span className='text-danger'>{formik.errors.email}</span></strong> <br/> 
 
               <label>Password</label>  <br/>
             <input type='password' placeholder='Enter your Password' name='password' value={formik.password} 
-            onChange={formik.handleChange}/>  <br/> <span>{formik.errors.password}</span> <br/> 
+            onChange={formik.handleChange}/>  <br/> <span className='text-danger'>{formik.errors.password}</span> <br/> 
 
               <label>Business-Name</label>  <br/>
             <input type='text' placeholder='Enter your Business Name' name='businessName' value={formik.businessName} 
-            onChange={formik.handleChange}/>  <br/>  <span>{formik.errors.businessName}</span> <br/> 
+            onChange={formik.handleChange}/>  <br/>  <span className='text-danger'>{formik.errors.businessName}</span> <br/> 
 
              <label>Address</label>  <br/>
             <textarea type='textarea' placeholder='Enter your Address Name' name='address' value={formik.address} 
-            onChange={formik.handleChange}></textarea>  <br/> <span>{formik.errors.address}</span> <br/> 
+            onChange={formik.handleChange}></textarea>  <br/> <span className='text-danger'>{formik.errors.address}</span> <br/> 
 
-             <input type='submit' value='Register' />
+             <input className='btn btn-primary rounded-pill' type='submit' value='Register' />
          </form>
+             <div className='button'>
+             <button className='btn btn-4' onClick={handleBack} ><i className="bi bi-skip-backward-btn-fill"></i></button>
+             </div>
+            
+            
+            
+    </div>
     </div>
     </div>
   )

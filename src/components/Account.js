@@ -7,21 +7,23 @@ const Account = (props) => {
 
   const dispatch = useDispatch()
    
-   useEffect(()=>{
-      dispatch(startGetUser())
-   },[dispatch])
+  //  useEffect(()=>{
+  //     dispatch(startGetUser())
+  //  },[dispatch])
 
     const users = useSelector((state)=>{
        return      state.user
     })
   return (
-    <div>
+    <div className='display-box justify-center bg-light'>
     <div className='p-5'>
         <h2> User Info  </h2>
     </div>
     <div className='text-center'>
         <h3>Admin  -- {users.username}</h3>
         <h3>Email  -- {users.email}</h3>
+        <h3>Business Name - {users.businessName}</h3>
+        <h3>Address -- {users.address}</h3>
          
     </div>
     </div>    

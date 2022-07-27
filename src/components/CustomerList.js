@@ -8,9 +8,9 @@ import CustomerItem from './CustomerItem'
 const CustomerList = (props) => {
     const dispatch= useDispatch()
 
-    useEffect(()=>{
-        dispatch(startGetCust())
-    },[dispatch])
+   //  useEffect(()=>{
+   //      dispatch(startGetCust())
+   //  },[dispatch])
  
     const customers = useSelector((state)=>{
          return  state.customer

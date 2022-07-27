@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch , useSelector } from 'react-redux'
-import { startGetProduct } from '../actions/productAction'
+//import { startGetProduct } from '../actions/productAction'
 import ProductItem from './ProductItem'
 
 const ProductList = (props) => {
-    const dispatch = useDispatch()
+    
 
-    useEffect(()=>{
-        dispatch(startGetProduct())
-    },[dispatch])
+    // useEffect(()=>{
+    //     dispatch(startGetProduct())
+    // },[dispatch])
     
     const product = useSelector((state)=>{
         return   state.product

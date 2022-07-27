@@ -7,11 +7,11 @@ import swal from 'sweetalert'
 const loginShema = Yup.object().shape({
       email : Yup.string()
          .email()
-         .required(`Provide correct Email`) ,
+         .required(<strong>Provide correct Email</strong>) ,
       password : Yup.string()
           .min(8)
           .max(64)
-          .required(`password needed`)
+          .required(<strong>Provide correct Password</strong>)
 })
 const Login = (props) => {
    const {handleAuth} = props
@@ -44,22 +44,30 @@ const Login = (props) => {
        validateOnChange : false
    })
   return (
-    <div className='row p-5'>
-        <h2>Login with Us</h2>
-        <div className='col-md-5'>
-         <form onSubmit={formik.handleSubmit}>
+     
+    <div className='border p-5 m-4'>
+        <h2>Login</h2>
+       
+        <div  className='col'>
+           
+         <form onSubmit={formik.handleSubmit} className='form-inline'>
+           <div >
             <label>Email</label> <br/>
             <input type='text' value={formik.values.email} placeholder ="enter your email"
-             name='email' onChange={formik.handleChange} /> {formik.errors.email}  <br/>
-
+             name='email' onChange={formik.handleChange} /> <br/><span className=' text-danger'>{formik.errors.email}</span>  <br/>
+           </div>
+            <div>
             < label>Password</label> <br/>
             <input type='password' value={formik.values.password} placeholder ="enter your password"
-             name='password' onChange={formik.handleChange} /> {formik.errors.password} <br/>
+             name='password' onChange={formik.handleChange} /> <br/> <span className="text-danger">{formik.errors.password}</span>  <br/> <br/>
+             </div>
+            <input className='btn btn-primary rounded-pill' type='submit' value='Login' />
             
-            <input type='submit' value='Login' />
-         </form>
+          </form>
+          
          </div>
-    </div>
+         </div> 
+   
   )
 }
 
