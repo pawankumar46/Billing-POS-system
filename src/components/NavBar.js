@@ -7,6 +7,8 @@ import Account from './Account';
 import CustomerContainer from './CustomerContainer';
 import ProductContainer from './ProductContainer';
 import BillGenerator from './BillGenerator';
+import ViewAll from './ViewAll';
+
 import Dashboard from './Dashboard';
 
 import '../styles.css'
@@ -26,7 +28,8 @@ const NavBar = (props) => {
               <Link to='/products'>Products</Link> <span></span>
               <Link to='/dashboard'>Dashboard</Link>  <span></span>
               <Link to='/billing'>Billing</Link> <span></span>
-              <Link to='/logout' onClick={()=>{
+              <Link to='/logout' onClick={(e)=>{
+                e.preventDefault()
                   localStorage.removeItem('token')
                   alert('successfully logged out')
                    handleAuth()
@@ -50,12 +53,13 @@ const NavBar = (props) => {
           <Route  path='/login'  render={(props)=>{
              return <Login {...props} handleAuth={handleAuth} />
           }}  />
-          <Route   path='/account' component={Account} />
-          <Route   path='/products' component={ProductContainer}/>
-          <Route  path='/customer' component={CustomerContainer} />
-          <Route  path='/billing' component={BillContainer} />
-          <Route  path ='/generateBill' component={BillGenerator}/>
-          <Route  path='/dashboard' component={Dashboard}/>
+          <Route   path='/account' component={Account} exact />
+          <Route   path='/products' component={ProductContainer} exact/>
+          <Route  path='/customer' component={CustomerContainer} exact />
+          <Route  path='/billing' component={BillContainer}exact />
+           <Route  path='/dashboard' component={Dashboard} exact/>
+           <Route   path ='/billing/:billId' component={BillGenerator}exact/>
+           <Route   path="/bills/all" component={ViewAll} exact/>
     </div>
     </div>
   )

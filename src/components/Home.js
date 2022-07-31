@@ -9,7 +9,7 @@ const Home = (props) => {
             Welcome to my shop...
          </h4>
         </div>
-         <div className='flex'>
+         <div className='container'>
          <img src={image} alt='' />
          </div>
     </div>

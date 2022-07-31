@@ -34,17 +34,17 @@ const Customer = (props) => {
         
          <div >
            <form onSubmit={formik.handleSubmit}>
-            <label>Name</label>
+            <label>Name</label> <br/>
             <input type='text' value={formik.values.name} name='name' 
             placeholder='Enter your name'
             onChange={formik.handleChange}/> <br/> <br/>
 
-            <label>Mobile</label>
+            <label>Mobile</label><br/>
             <input type='text' value={formik.values.mobile} name='mobile'
             placeholder='Enter your number' 
             onChange={formik.handleChange}/> <br/> <br/>
 
-            <label>Email</label>
+            <label>Email</label><br/>
             <input type='text' value={formik.values.email} name='email' placeholder='Enter your Email'
               onChange={formik.handleChange}/> <br/> <br/>
 

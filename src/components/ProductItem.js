@@ -20,7 +20,7 @@ const ProductItem = (props) => {
       }
 
   return (
-    <div>
+    <div className='col-sm-4'>
         {toggle ? (
           <>
            <EditProduct 
@@ -29,7 +29,24 @@ const ProductItem = (props) => {
           </>
 
         ): (
-            <div className='my-5'>
+
+            <div  className='shadow-lg p-3 mb-3 bg-white'> 
+               
+                     
+                    
+                          
+                              <h5>Item - {name}</h5>
+                              <h6>Cost - <i className="fa fa-inr"></i> {price}</h6>
+                               <div className='start'>  <p> <button className='btn btn-4' onClick={()=>{
+                                    handleRemove(_id)
+                                 }}><i className="bi bi-trash3-fill"></i></button> </p> </div>
+                                <div className='end'> 
+                                <p> <button className='btn btn-4' onClick={handleToggle}><i className="bi bi-pencil-fill"></i></button></p>
+                                  </div>
+                                
+                     
+                
+            {/* <div className='my-5'>
             <h5>Item - {name}</h5>
             <h5>Cost - <i className="fa fa-inr"></i> {price}</h5>
             <button className='btn btn-4' onClick={()=>{
@@ -37,6 +54,8 @@ const ProductItem = (props) => {
             }}><i className="bi bi-trash3-fill"></i></button>
              <button className='btn btn-4' onClick={handleToggle}><i className="bi bi-pencil-fill"></i></button>
              
+            </div> */}
+
             </div>
 
         )}

@@ -43,14 +43,18 @@ const Login = (props) => {
        validationSchema : loginShema,
        validateOnChange : false
    })
+
+    const handleRegister=()=>{
+        props.history.push('/register')
+    }
   return (
      
     <div className='border p-5 m-4'>
-        <h2>Login</h2>
+        <h4>Login</h4>
        
-        <div  className='col'>
+        <div  className='form-group'>
            
-         <form onSubmit={formik.handleSubmit} className='form-inline'>
+         <form onSubmit={formik.handleSubmit} >
            <div >
             <label>Email</label> <br/>
             <input type='text' value={formik.values.email} placeholder ="enter your email"
@@ -64,6 +68,9 @@ const Login = (props) => {
             <input className='btn btn-primary rounded-pill' type='submit' value='Login' />
             
           </form>
+           <>
+             <p onClick={handleRegister}>Click here to <strong>Register</strong> </p>
+           </>
           
          </div>
          </div> 

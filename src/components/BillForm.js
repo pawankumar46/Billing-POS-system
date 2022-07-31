@@ -3,13 +3,14 @@ import swal from 'sweetalert'
 import {useDispatch, useSelector } from 'react-redux'
 import { useFormik } from 'formik'
 import { startPostBill } from '../actions/billAction'
-
+import { useHistory } from 'react-router-dom'
 
 
 
 
 const BillForm = (props) => {
    const dispatch = useDispatch()
+    const history = useHistory()
     const {updateGenerateBill} =props
    
      const [formFields , setFormFields] = useState([
@@ -31,6 +32,11 @@ const BillForm = (props) => {
     // const redirect =()=>{
     //   history.push('/generateBill')
     // }
+
+    const redirect =(billId) =>{
+      history.push(`/billing/${billId}`) 
+    }
+    
    const formik = useFormik({
         initialValues : {
              date : '',
@@ -40,7 +46,7 @@ const BillForm = (props) => {
         onSubmit : (formData , {resetForm})=>{
           console.log("line",formData)
             // console.log({...formData,LineItems:formFields})
-          dispatch(startPostBill({...formData,lineItems:formFields} , updateGenerateBill))
+          dispatch(startPostBill({...formData,lineItems:formFields} ,redirect))
             //  console.log("formdata" , formData)
             //  console.log('form' , formFields)
              
@@ -68,8 +74,8 @@ const BillForm = (props) => {
            setFormFields(data)
         }
        
-        
-       console.log("formik.values",formik.values)
+       
+      
 return (
   <div  className='form-floating'>
       

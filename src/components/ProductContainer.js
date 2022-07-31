@@ -5,12 +5,15 @@ import ProductList from './ProductList'
 const ProductContainer = (props) => {
   return (
     <div className='row'>
-         <h2 className="product p-5"> Add Your Products </h2>
-       <div className='col-md-4'>
+         <h2 className="product"> Add Your Products </h2>
+       <div className='col-md-4 p-5'>
          <Products  />
        </div>
        <div className='col-md-8'>
-        <ProductList />
+         <div className='row'>
+         <ProductList />
+         </div>
+       
        </div>
     </div>
   )

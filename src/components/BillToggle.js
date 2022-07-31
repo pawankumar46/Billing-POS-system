@@ -99,3 +99,20 @@
   //    <button className='btn btn-4' onClick={handleBillBack} ><i className="bi bi-skip-backward-btn-fill"></i></button>
   // </div>
 //  </div>
+
+// const newBills = JSON.parse((bill))
+// console.log(newBills)
+// const currentBills = newBills.filter(item => item.customer === customer._id)
+// console.log("currentBills",currentBills)
+// const currentProductDetails = currentBills.map(bil =>{
+//   const  newBill = bil.lineItems.map(item =>{
+//     const details = products.filter(prod => prod._id === item.product)[0]
+//     return {quantity:item.quantity,...details}
+//     })
+  
+//   return {
+//     billId:bil._id,
+//     products : newBill
+//   }
+// })
+// console.log("method",currentProductDetails)

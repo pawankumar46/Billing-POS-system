@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { startDeleteCus } from '../actions/customerAction'
 import EditCustomer from './EditCustomer'
 
+
 const CustomerItem = (props) => {
    const [toggle , setToggle] = useState()
 
@@ -13,6 +14,7 @@ const CustomerItem = (props) => {
 
      const dispatch = useDispatch()
        
+    
 
      const handleRemove=()=>{
         const confirm = window.confirm(`Are You Sure.. ?`)
@@ -22,34 +24,39 @@ const CustomerItem = (props) => {
      }
     
   return (
-    <div>
-    <div>
-          {toggle  ?  (
-            <>
-           <EditCustomer  
-            _id={_id} name={name} mobile={mobile} handleToggle={handleToggle} email={email}/>
-           <button className='btn btn-4' onClick={handleToggle}><i className="bi bi-trash3-fill"></i></button>
-           </>
-) : (
-  <div>
-    <React.Fragment>
-         
-  <h5>Name - {name}</h5>
-  <p>Mobile -{mobile}</p>
-  <p>{email}</p>
-  <button className='btn btn-4-danger' onClick={()=>{
-     handleRemove(_id)
-  }}><i className="bi bi-trash3-fill"></i></button>
-  <button className='btn btn-4' onClick={handleToggle}><i className="bi bi-pencil-fill"></i></button>
-  
-  </React.Fragment>
-</div>
-)}
-    </div>
-    
+        <div className='col-sm-4'>
+                            {toggle  ?  (
+                              <>
+                            <EditCustomer  
+                              _id={_id} name={name} mobile={mobile} handleToggle={handleToggle} email={email}/>
+                            <button className='btn btn-4' onClick={handleToggle}><i className="bi bi-trash3-fill"></i></button>
+                            </>
+                  ) : (
+                    <div>
+                        
+                            <div className='shadow-lg p-3 mb-3 bg-white'> 
+                                              <h3>{name}</h3>
+                                              <h5>{mobile}</h5>
+                                              <h6>{email}</h6>
+                                              
+                                              <p><button className='btn btn-4-danger' onClick={()=>{
+                                                  handleRemove(_id)
+                                                }}><i className="bi bi-trash3-fill"></i></button></p>
+                                              <p><button className='btn btn-4' onClick={handleToggle}><i className="bi bi-pencil-fill"></i></button></p> 
+                            </div>          
+                  </div>
+                  
+                  )}
+
+                      </div>
+     
+           
    
-    </div>
+ 
+    
+
+
   )
-}
+ }
 
 export default CustomerItem

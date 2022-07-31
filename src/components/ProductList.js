@@ -21,12 +21,16 @@ const ProductList = (props) => {
              <p>Add Your Products to Kart</p>
             </>
         ):(
-            <>
-                <h3>Total Products = {product.length}</h3>
+            <div> 
+            <h4  className='text-end px-4 py-2'>Total customers : {product.length}</h4>
+            <div className='row' style={{maxHeight:"400px", overflow:"auto",padding:"20px 10px", boxShadow: "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"}}>
+            
+               
                 {product.map((ele ,i)=>{
                     return <ProductItem  key={i} {...ele} />
                 })}
-            </>
+            </div>
+            </div>
         )}
        
     </div>

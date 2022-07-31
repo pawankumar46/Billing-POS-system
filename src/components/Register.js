@@ -66,9 +66,12 @@ const Register = (props) => {
      const handleBack=()=>{
        props.history.push('/')
      }
+     const handleLogin=()=>{
+       props.history.push('/login')
+     }
   return (
      <div className='justify-content-center m-3'>
-        <h2>Register with Us</h2>
+        <h4>Register with Us</h4>
     
     <div className='container'>
     <div className='border' >
@@ -98,6 +101,9 @@ const Register = (props) => {
 
              <input className='btn btn-primary rounded-pill' type='submit' value='Register' />
          </form>
+               <>
+                  <p onClick={handleLogin} >Already Registered User? Click here to <strong>login</strong> </p>
+               </>
              <div className='button'>
              <button className='btn btn-4' onClick={handleBack} ><i className="bi bi-skip-backward-btn-fill"></i></button>
              </div>

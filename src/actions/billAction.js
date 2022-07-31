@@ -2,7 +2,7 @@ import axios from "axios";
 import swal from "sweetalert";
 
  const token  = localStorage.getItem('token')
-export const startPostBill=(data,updateGenerateBill)=>{
+export const startPostBill=(data,redirect)=>{
     console.log('action' , data)
     return(dispatch)=>{
         axios.post(`http://dct-pos-app.herokuapp.com/api/bills` , data , {
@@ -17,7 +17,7 @@ export const startPostBill=(data,updateGenerateBill)=>{
             } else {
                
                 dispatch(billPost(result))
-                updateGenerateBill(result)
+                redirect(result._id)
 
             }
         })
