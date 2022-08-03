@@ -21,7 +21,7 @@ const Dashboard = (props) => {
       ]
        const options = {
         title: "Total Expenditure",
-        pieHole: 0.2,
+        pieHole: 0.0,
         is3D: false,
       }
   return (

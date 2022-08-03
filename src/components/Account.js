@@ -16,16 +16,45 @@ const Account = (props) => {
     })
   return (
     <div className='display-box justify-center'>
-    <div className='p-5'>
-        <h2> User Info  </h2>
-    </div>
+      <div class="container">
+             <h2 class="text-center text-white">
+                Our Instructors
+             </h2>
+             <p class="lead text-center text-white ">
+                 our instructors  all have 5+ years as a web developer in industry
+             </p>
     <div className='text-center'>
-        <h3>Admin  -- {users.username}</h3>
-        <h3>Email  -- {users.email}</h3>
-        <h3>Business Name - {users.businessName}</h3>
-        <h3>Address -- {users.address}</h3>
-         
+    <div class="row g-4">
+                <div class="col-md-12">
+                    <div class="card bg-light">
+                        <div class="card-bady text-center">
+                            <img src="https://randomuser.me/api/portraits/men/11.jpg" 
+                            class="rounded-circle mb-2 pt-3" alt=""/>
+                            <h3 class="card-title mb-2">
+                            {users.username}
+                            </h3>
+                            <p class="card-text">
+                            {users.email}
+                            </p>
+                            <p>
+                            {users.businessName}
+                            </p>
+                            <p>
+                            {users.address}
+                            </p>
+                            <a href="https://twitter.com/i/flow/login"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="https://www.facebook.com/login"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="https://www.instagram.com/accounts/login/?"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                        </div>
+                    </div>
+                    
+                </div>
+                 </div>
     </div>
+
+    
+             
+                 </div>
     </div>    
     
   )
