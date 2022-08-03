@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import swal from 'sweetalert'
 import { startDeleteCus } from '../actions/customerAction'
 import EditCustomer from './EditCustomer'
 
@@ -17,10 +18,12 @@ const CustomerItem = (props) => {
     
 
      const handleRemove=()=>{
-        const confirm = window.confirm(`Are You Sure.. ?`)
-         if(confirm){
-           dispatch(startDeleteCus(_id))
-         }
+       const confirm = window.confirm(`Are You Sure.. ?`)
+       if(confirm){
+        dispatch(startDeleteCus(_id))
+      }
+        //const confirm = window.confirm(`Are You Sure.. ?`)
+         
      }
     
   return (
@@ -29,20 +32,28 @@ const CustomerItem = (props) => {
                               <>
                             <EditCustomer  
                               _id={_id} name={name} mobile={mobile} handleToggle={handleToggle} email={email}/>
-                            <button className='btn btn-4' onClick={handleToggle}><i className="bi bi-trash3-fill"></i></button>
+                            <button className='btn btn-4' onClick={handleToggle}><i className="bi bi-x-square"></i></button>
                             </>
                   ) : (
                     <div>
                         
-                            <div className='shadow-lg p-3 mb-3 bg-white'> 
+                            <div className='shadow p-3 mb-3 bg-white'> 
                                               <h3>{name}</h3>
                                               <h5>{mobile}</h5>
                                               <h6>{email}</h6>
-                                              
-                                              <p><button className='btn btn-4-danger' onClick={()=>{
+                                              <div>
+                                                 <div className='text-start'>
+                                                 <p><button className='btn btn-4-danger' onClick={()=>{
                                                   handleRemove(_id)
                                                 }}><i className="bi bi-trash3-fill"></i></button></p>
-                                              <p><button className='btn btn-4' onClick={handleToggle}><i className="bi bi-pencil-fill"></i></button></p> 
+                                                 </div>
+                                                 <div className='text-end'>
+                                                 <p><button className='btn btn-4' onClick={handleToggle}><i className="bi bi-pencil-fill"></i></button></p>
+                                                 </div>
+                                              </div>
+
+                                             
+                                               
                             </div>          
                   </div>
                   

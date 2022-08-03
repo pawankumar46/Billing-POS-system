@@ -1,5 +1,5 @@
 import React , {useEffect, useState} from 'react'
-import NavBar from './components/NavBar';
+import RouteContainer from './components/RouteContainer';
 import {useSelector} from 'react-redux'
 function App(props) {
    const [toggle ,setToggle] = useState(false)
@@ -22,10 +22,10 @@ function App(props) {
     })
 
      useEffect(()=>{
-       if(products.length > 0 && customers.length > 0 && bills.length>0 && Object.keys(account).length>0){
+       if(products.length > 0 || customers.length > 0 || bills.length>0 || Object.keys(account).length>0){
            setIsLoading(false)
        }
-     },[customers , products, bills, account])
+     },[customers , products , bills])
      
      useEffect(()=>{
       if ( localStorage.getItem('token')) {
@@ -40,11 +40,11 @@ function App(props) {
           { !isLoading && (
            <>
          <div className='bg-light text-center  p-2'>
-         <h2>Billing App</h2>
+         <h3>Customer POS System</h3>
          </div>
-         <hr className='mx-5'/>
+          <hr style={{width : '800px' , margin : 'auto'}}/>
        <div>
-       <NavBar  toggle={toggle} handleAuth={handleAuth} />
+       <RouteContainer  toggle={toggle} handleAuth={handleAuth} />
        </div>
        </>
        )}

@@ -102,20 +102,20 @@ return (
                     <option value=''> Products</option>
                    {prodId.map((ele ,i)=>{
                     //  console.log(ele._id)
-                     return <option key={ele._id} value={ele._id}>{ele.name}</option>
+                     return <option  key={ele._id} value={ele._id}>{ele.name}</option>
                    })}
                 </select> <span> </span>
    
                 <input name='quantity' placeholder='quantity'
                 onChange={event=> handleFormChange(event , index)} value={form.quantity}/> 
-
-                {formFields.length > 1 &&  < button type='button'onClick={()=>{removeItems(index)}}>Delete</button>}
+                <button className='btn  btn-4' type='button' onClick={addFields} ><i className="bi bi-bag-plus-fill"></i></button>
+                {formFields.length > 1 &&  < button className='btn  btn-4' type='button'onClick={()=>{removeItems(index)}}><i className='bi bi-trash3-fill'></i></button>}
                </div>
                
              )
              })}
              
-            <button className='btn rounded-pill border-primary' type='button' onClick={addFields} ><i className="bi bi-plus-circle"></i></button>
+            
 
          </div>
              <input type='submit'  className='btn rounded-pill border-primary' value='Generate' />
@@ -125,7 +125,7 @@ return (
        
 
        </form>
-        <hr/>
+        
      
          
        

@@ -30,7 +30,7 @@ const ProductItem = (props) => {
 
         ): (
 
-            <div  className='shadow-lg p-3 mb-3 bg-white'> 
+            <div  className='shadow p-3 mb-3 bg-white'> 
                
                      
                     

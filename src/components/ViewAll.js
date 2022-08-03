@@ -52,33 +52,38 @@ const ViewAll = (props) => {
 
       const currentProductDetails = allCustomerBills()
   return (
-    <div>
+    <div className='row'>
+       <div className='col-md-12'>
+         <div className='row m-2'>
+           <div className='col-md-4'>
       {
         currentProductDetails.map((ele, index) => {
           return (
-              <div key={index}>
-                  <div>
-                      <h4>Customer - {ele.customerName}</h4>
-                  </div>
-                  <div>
-                      
-                          {ele.products.map((item, ind) => {
+            
+              
+              <div  key={index}>
+                 <div>
+                         <h4>Customer - {ele.customerName}</h4>
+                             {ele.products.map((item, ind) => {
                               return (
                                   <li key={ind}>{`${item.name} - ${item.quantity} - ${item.subTotal}`}</li>
                               )
                           })}
-                     
-                          
-                  </div>
-                  <h4>Total-{ele.total}</h4>
-                   <div>
-           <button   className="btn btn-danger btn-4" onClick={() => {handleRemove(ele.billId)}}>X</button>
-                  </div> 
-                  
+                    
+                  <h5>Total - <i className="fa fa-inr"></i>{ele.total}</h5>
+                   
+                    <button className="btn btn-4" onClick={() => {handleRemove(ele.billId)}}>X</button>
+                   
+                 </div> 
               </div>
+             
+              
           )
       })
       }
+      </div>
+       </div>
+      </div>
     </div>
   )
 }

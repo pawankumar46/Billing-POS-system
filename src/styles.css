@@ -1,6 +1,6 @@
 .navbar-font{
     font-size: 20px;
-    word-spacing: 60px;
+    word-spacing: 70px;
     text-shadow: 0 0 3px #0b13816e;
 }
 
@@ -38,3 +38,14 @@
     top:0;
     right:0;
 } */
+
+.Link {
+   text-decoration: none;
+   color: inherit;
+   font-size: larger;
+   word-spacing: 0px;
+   }
+  .Link:hover {
+    text-decoration-style :wavy;
+    text-decoration :overline;
+  } 

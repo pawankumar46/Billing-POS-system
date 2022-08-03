@@ -54,9 +54,11 @@ const Login = (props) => {
        
         <div  className='form-group'>
            
-         <form onSubmit={formik.handleSubmit} >
+         <form  className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4' onSubmit={formik.handleSubmit} >
            <div >
-            <label>Email</label> <br/>
+           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+         Email
+      </label> <br/>
             <input type='text' value={formik.values.email} placeholder ="enter your email"
              name='email' onChange={formik.handleChange} /> <br/><span className=' text-danger'>{formik.errors.email}</span>  <br/>
            </div>

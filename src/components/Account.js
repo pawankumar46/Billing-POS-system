@@ -15,7 +15,7 @@ const Account = (props) => {
        return      state.user
     })
   return (
-    <div className='display-box justify-center bg-light'>
+    <div className='display-box justify-center'>
     <div className='p-5'>
         <h2> User Info  </h2>
     </div>

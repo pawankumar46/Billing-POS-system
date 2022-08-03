@@ -33,22 +33,28 @@ const billProducts = bill?.lineItems.map(item =>{
      history.push('/billing')
   }
   return (
-     <div>
-           <div  ref={ref}>
-               <h3>{customer.name}</h3>
+     <div className='text-center'>
+         <div className='m-5 w-80 rounded overflow-hidden shadow-lg p-4'>
+         <div className='card'>
+           <div  className='card-body' ref={ref}>
+               <h3 className='card-title'>{customer.name}</h3>
                {
                 billProducts.map((item,i)=>{
                    return (
                      <div key={i}>
-                        <h6>Product  - {item.name} <span>  </span>
-                            SubTotal  - {item.subTotal}</h6>
+                       <li><h6 className='card-text'>Product  - {item.name} <br/> SubTotal - {item.subTotal}</h6></li> 
                      </div>
                    )
                 })
                }
-               <p>Total - {bill.total}</p>
+               <p className='card-text'>Total - {bill.total}</p>
            </div>
-            <button onClick={handleBack}>back</button>
+           </div>
+           </div>
+             <div>
+               
+             </div>
+            <button className='btn btn-4' onClick={handleBack}><i className="bi bi-backspace"></i></button>
      </div>
   )
 }
