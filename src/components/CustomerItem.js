@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import swal from 'sweetalert'
 import { startDeleteCus } from '../actions/customerAction'
 import EditCustomer from './EditCustomer'
-
+import '../styles.css'
 
 const CustomerItem = (props) => {
    const [toggle , setToggle] = useState()
@@ -40,14 +40,14 @@ const CustomerItem = (props) => {
                             <div className='shadow p-3 mb-3 bg-white'> 
                                               <h3>{name}</h3>
                                               <h5>{mobile}</h5>
-                                              <h6>{email}</h6>
-                                              <div>
-                                                 <div className='text-start'>
+                                              <p>{email}</p>
+                                              <div className='card-info'>
+                                                 <div >
                                                  <p><button className='btn btn-4-danger' onClick={()=>{
                                                   handleRemove(_id)
                                                 }}><i className="bi bi-trash3-fill"></i></button></p>
                                                  </div>
-                                                 <div className='text-end'>
+                                                 <div >
                                                  <p><button className='btn btn-4' onClick={handleToggle}><i className="bi bi-pencil-fill"></i></button></p>
                                                  </div>
                                               </div>

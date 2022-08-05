@@ -53,20 +53,23 @@ const ViewAll = (props) => {
       const currentProductDetails = allCustomerBills()
   return (
     <div className='row'>
-       <div className='col-md-12'>
-         <div className='row m-2'>
-           <div className='col-md-4'>
+       <div>
+         <div className='col-md-12'>
+           <div className='row'>
       {
         currentProductDetails.map((ele, index) => {
           return (
             
-              
+              <div className='col-sm-4 p-5 m-2'>
+               <div className='shadow p-3 mb-3 bg-white'>
               <div  key={index}>
                  <div>
                          <h4>Customer - {ele.customerName}</h4>
                              {ele.products.map((item, ind) => {
                               return (
-                                  <li key={ind}>{`${item.name} - ${item.quantity} - ${item.subTotal}`}</li>
+                                <div key={ind}>
+                                  <li >{`${item.name} - ${item.quantity} - ${item.subTotal}`}</li>
+                                 </div> 
                               )
                           })}
                     
@@ -76,7 +79,8 @@ const ViewAll = (props) => {
                    
                  </div> 
               </div>
-             
+              </div>
+             </div>
               
           )
       })

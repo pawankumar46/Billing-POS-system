@@ -32,7 +32,7 @@ const Customer = (props) => {
   return (
     <div  >
         
-         <div >
+         <div  >
            <form onSubmit={formik.handleSubmit}>
             <label>Name</label> <br/>
             <input type='text' value={formik.values.name} name='name' 

@@ -13,6 +13,7 @@ import Dashboard from './Dashboard';
 
 import '../styles.css'
 import BillContainer from './BillContainer';
+import swal from 'sweetalert';
 
 const RouteContainer = (props) => {
   const {toggle , handleAuth} = props
@@ -87,7 +88,7 @@ const RouteContainer = (props) => {
               <Link className='Link' to='/logout'   onClick={(e) => {
                                   e.preventDefault()
                                 localStorage.removeItem('token')
-                                alert('Logged out Successfully')
+                                swal('Logged out Successfully')
                                 handleAuth()
                                 props.history.push("/")
                           }}>Logout</Link>

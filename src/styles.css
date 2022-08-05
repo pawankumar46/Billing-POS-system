@@ -49,3 +49,9 @@
     text-decoration-style :wavy;
     text-decoration :overline;
   } 
+
+  .card-info {
+    display: flex;
+    justify-content: space-around;
+  
+  }

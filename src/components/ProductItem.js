@@ -2,7 +2,7 @@ import React , {useState} from 'react'
 import { useDispatch } from 'react-redux'
 import { startDeleteProduct } from '../actions/productAction'
 import EditProduct from './EditProduct'
-
+import '../styles.css'
 const ProductItem = (props) => {
      const [toggle , setToggle] = useState(false)
      const {_id , name , price } = props
@@ -25,7 +25,7 @@ const ProductItem = (props) => {
           <>
            <EditProduct 
             _id={_id} name={name} price={price} handleToggle={handleToggle}/>
-          <button className='btn btn-4' onClick={handleToggle}><i className="bi bi-trash3-fill"></i></button>
+          <button className='btn btn-4' onClick={handleToggle}><i className="bi bi-x-square"></i></button>
           </>
 
         ): (
@@ -37,13 +37,14 @@ const ProductItem = (props) => {
                           
                               <h5>Item - {name}</h5>
                               <h6>Cost - <i className="fa fa-inr"></i> {price}</h6>
+                                 <div className='card-info'>
                                <div className='start'>  <p> <button className='btn btn-4' onClick={()=>{
                                     handleRemove(_id)
                                  }}><i className="bi bi-trash3-fill"></i></button> </p> </div>
                                 <div className='end'> 
                                 <p> <button className='btn btn-4' onClick={handleToggle}><i className="bi bi-pencil-fill"></i></button></p>
                                   </div>
-                                
+                                 </div>
                      
                 
             {/* <div className='my-5'>

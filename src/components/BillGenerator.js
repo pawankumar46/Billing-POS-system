@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
  import ReactToPdf  from 'react-to-pdf'
-
+ 
 import { useHistory } from 'react-router-dom'
  
 const BillGenerator = (props) => {
@@ -28,6 +28,8 @@ const billProducts = bill?.lineItems.map(item =>{
    result.subTotal = item.subTotal
    return result
   }) 
+
+ const gst = Number (new Date()) 
   
   const handleBack=()=>{
      history.push('/billing')
@@ -38,6 +40,7 @@ const billProducts = bill?.lineItems.map(item =>{
          <div className='card'>
            <div  className='card-body' ref={ref}>
                <h3 className='card-title'>{customer.name}</h3>
+                 <p>{gst}</p>
                {
                 billProducts.map((item,i)=>{
                    return (
@@ -52,7 +55,12 @@ const billProducts = bill?.lineItems.map(item =>{
            </div>
            </div>
              <div>
-               
+             <ReactToPdf targetRef={ref} filename="Bill.pdf">
+             {({toPdf})=>
+                <button type='button' className='btn btn-4' onClick={toPdf}>Download</button>
+             }
+
+              </ReactToPdf>
              </div>
             <button className='btn btn-4' onClick={handleBack}><i className="bi bi-backspace"></i></button>
      </div>

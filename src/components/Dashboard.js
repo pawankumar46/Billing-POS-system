@@ -27,7 +27,7 @@ const Dashboard = (props) => {
   return (
     <div className='row p-5'>
         <Chart
-      chartType="PieChart"
+      chartType="ComboChart"
       width="100%"
       height="400px"
       data={data}

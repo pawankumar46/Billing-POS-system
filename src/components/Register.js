@@ -77,26 +77,26 @@ const Register = (props) => {
     <div className='border' >
        
 
-         <form onSubmit={formik.handleSubmit} >
+         <form  className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4' onSubmit={formik.handleSubmit} >
 
             <label>User-Name</label>  <br/>
-            <input type='text' placeholder='Enter your Name' name='username' value={formik.values.username} 
+            <input className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='text' placeholder='Enter your Name' name='username' value={formik.values.username} 
             onChange={formik.handleChange}/>   <br/> <strong><span className='text-danger'>{formik.errors.username}</span></strong> <br/> 
 
              <label>Email</label>  <br/>
-            <input type='text' placeholder='Enter your Email' name='email' value={formik.email} 
+            <input className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='text' placeholder='Enter your Email' name='email' value={formik.email} 
             onChange={formik.handleChange}/>  <br/> <strong><span className='text-danger'>{formik.errors.email}</span></strong> <br/> 
 
               <label>Password</label>  <br/>
-            <input type='password' placeholder='Enter your Password' name='password' value={formik.password} 
+            <input className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='password' placeholder='Enter your Password' name='password' value={formik.password} 
             onChange={formik.handleChange}/>  <br/> <span className='text-danger'>{formik.errors.password}</span> <br/> 
 
               <label>Business-Name</label>  <br/>
-            <input type='text' placeholder='Enter your Business Name' name='businessName' value={formik.businessName} 
+            <input className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='text' placeholder='Enter your Business Name' name='businessName' value={formik.businessName} 
             onChange={formik.handleChange}/>  <br/>  <span className='text-danger'>{formik.errors.businessName}</span> <br/> 
 
              <label>Address</label>  <br/>
-            <textarea type='textarea' placeholder='Enter your Address Name' name='address' value={formik.address} 
+            <textarea className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='textarea' placeholder='Enter your Address Name' name='address' value={formik.address} 
             onChange={formik.handleChange}></textarea>  <br/> <span className='text-danger'>{formik.errors.address}</span> <br/> 
 
              <input className='btn btn-primary rounded-pill' type='submit' value='Register' />

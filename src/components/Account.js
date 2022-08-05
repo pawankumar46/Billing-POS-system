@@ -16,24 +16,24 @@ const Account = (props) => {
     })
   return (
     <div className='display-box justify-center'>
-      <div class="container">
-             <h2 class="text-center text-white">
+      <div className="container">
+             <h2 className="text-center text-white">
                 Our Instructors
              </h2>
-             <p class="lead text-center text-white ">
+             <p className="lead text-center text-white ">
                  our instructors  all have 5+ years as a web developer in industry
              </p>
     <div className='text-center'>
-    <div class="row g-4">
-                <div class="col-md-12">
-                    <div class="card bg-light">
-                        <div class="card-bady text-center">
+    <div className="row g-4">
+                <div className="col-md-12">
+                    <div className="card bg-light">
+                        <div className="card-bady text-center">
                             <img src="https://randomuser.me/api/portraits/men/11.jpg" 
-                            class="rounded-circle mb-2 pt-3" alt=""/>
-                            <h3 class="card-title mb-2">
+                            className="rounded-circle mb-2 pt-3" alt=""/>
+                            <h3 className="card-title mb-2">
                             {users.username}
                             </h3>
-                            <p class="card-text">
+                            <p className="card-text">
                             {users.email}
                             </p>
                             <p>
@@ -42,9 +42,9 @@ const Account = (props) => {
                             <p>
                             {users.address}
                             </p>
-                            <a href="https://twitter.com/i/flow/login"><i class="bi bi-twitter text-dark mx-1"></i></a>
-                            <a href="https://www.facebook.com/login"><i class="bi bi-facebook text-dark mx-1"></i></a>
-                            <a href="https://www.instagram.com/accounts/login/?"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href="https://twitter.com/i/flow/login"><i className="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="https://www.facebook.com/login"><i className="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="https://www.instagram.com/accounts/login/?"><i className="bi bi-instagram text-dark mx-1"></i></a>
                         </div>
                     </div>
                     

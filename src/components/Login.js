@@ -49,22 +49,24 @@ const Login = (props) => {
     }
   return (
      
-    <div className='border p-5 m-4'>
+    <div className='w-full max-w-xs p-4'>
         <h4>Login</h4>
        
-        <div  className='form-group'>
+        <div  className='form-group p-5'>
            
          <form  className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4' onSubmit={formik.handleSubmit} >
-           <div >
+           <div  className='mb-4'>
            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
          Email
       </label> <br/>
-            <input type='text' value={formik.values.email} placeholder ="enter your email"
+            <input className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='text' value={formik.values.email} placeholder ="enter your email"
              name='email' onChange={formik.handleChange} /> <br/><span className=' text-danger'>{formik.errors.email}</span>  <br/>
            </div>
+
+
             <div>
             < label>Password</label> <br/>
-            <input type='password' value={formik.values.password} placeholder ="enter your password"
+            <input className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='password' value={formik.values.password} placeholder ="enter your password"
              name='password' onChange={formik.handleChange} /> <br/> <span className="text-danger">{formik.errors.password}</span>  <br/> <br/>
              </div>
             <input className='btn btn-primary rounded-pill' type='submit' value='Login' />
