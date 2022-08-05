@@ -38,6 +38,7 @@ const CustomerItem = (props) => {
                     <div>
                         
                             <div className='shadow p-3 mb-3 bg-white'> 
+                             
                                               <h3>{name}</h3>
                                               <h5>{mobile}</h5>
                                               <p>{email}</p>
