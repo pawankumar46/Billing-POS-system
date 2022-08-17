@@ -17,17 +17,12 @@ const Account = (props) => {
   return (
     <div className='display-box justify-center'>
       <div className="container">
-             <h2 className="text-center text-white">
-                Our Instructors
-             </h2>
-             <p className="lead text-center text-white ">
-                 our instructors  all have 5+ years as a web developer in industry
-             </p>
-    <div className='text-center'>
+             
+    <div className='text-center p-5'>
     <div className="row g-4">
                 <div className="col-md-12">
                     <div className="card bg-light">
-                        <div className="card-bady text-center">
+                        <div className="card-body text-center">
                             <img src="https://randomuser.me/api/portraits/men/11.jpg" 
                             className="rounded-circle mb-2 pt-3" alt=""/>
                             <h3 className="card-title mb-2">

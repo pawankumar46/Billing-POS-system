@@ -52,7 +52,7 @@ const ViewAll = (props) => {
 
       const currentProductDetails = allCustomerBills()
   return (
-    <div className='row'>
+    <div className='row flex'>
        <div>
          <div className='col-md-12'>
            <div className='row'>
@@ -60,9 +60,9 @@ const ViewAll = (props) => {
         currentProductDetails.map((ele, index) => {
           return (
             
-              <div className='col-sm-4 p-5 m-2'>
+              <div key={index} className='col-sm-4 my-2'>
                <div className='shadow p-3 mb-3 bg-white'>
-              <div  key={index}>
+              <div  >
                  <div>
                          <h4>Customer - {ele.customerName}</h4>
                              {ele.products.map((item, ind) => {

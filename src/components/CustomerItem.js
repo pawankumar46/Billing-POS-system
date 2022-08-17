@@ -43,13 +43,14 @@ const CustomerItem = (props) => {
                                               <h5>{mobile}</h5>
                                               <p>{email}</p>
                                               <div className='card-info'>
+                                                
+                                                 <div >
+                                                 <p><button className='btn btn-4' onClick={handleToggle}><i className="bi bi-pencil-fill"></i></button></p>
+                                                 </div>
                                                  <div >
                                                  <p><button className='btn btn-4-danger' onClick={()=>{
                                                   handleRemove(_id)
                                                 }}><i className="bi bi-trash3-fill"></i></button></p>
-                                                 </div>
-                                                 <div >
-                                                 <p><button className='btn btn-4' onClick={handleToggle}><i className="bi bi-pencil-fill"></i></button></p>
                                                  </div>
                                               </div>
 

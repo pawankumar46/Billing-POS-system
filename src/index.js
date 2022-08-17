@@ -9,7 +9,7 @@ import { startGetBill } from './actions/billAction';
 import { startGetCust } from './actions/customerAction';
 import { startGetProduct } from './actions/productAction';
 import { startGetUser } from './actions/userActions';
-
+import { asyncInitialUserDetailsFetch } from './actions/userActions';
 
  const store = configureStore()
   console.log('store' , store.getState())
@@ -20,10 +20,11 @@ import { startGetUser } from './actions/userActions';
 
    if(localStorage.hasOwnProperty('token')){
       // console.log("token")
-      store.dispatch(startGetUser())
-      store.dispatch(startGetCust())
-      store.dispatch( startGetProduct())
-      store.dispatch(startGetBill())
+    //   store.dispatch(startGetUser())
+    //   store.dispatch(startGetCust())
+    //   store.dispatch( startGetProduct())
+    //   store.dispatch(startGetBill())
+    store.dispatch(asyncInitialUserDetailsFetch())
   }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

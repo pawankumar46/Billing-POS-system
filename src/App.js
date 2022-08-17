@@ -1,38 +1,46 @@
 import React , {useEffect, useState} from 'react'
 import RouteContainer from './components/RouteContainer';
-import {useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
+import {asyncInitialUserDetailsFetch} from './actions/userActions'
+
 function App(props) {
    const [toggle ,setToggle] = useState(false)
    const [isLoading , setIsLoading] = useState(true)
-    const handleAuth=()=>{
-       setToggle(!toggle)
-    }
+   
     
-    const bills = useSelector((state)=>{
-       return state.bill
-    })
-    const customers = useSelector((state)=>{
-      return state.customer
-    })
-    const  products = useSelector((state)=>{
-      return state.product
-    })
-    const  account = useSelector((state)=>{
-      return state.user
-    })
+    // const bills = useSelector((state)=>{
+    //    return state.bill
+    // })
+    // const customers = useSelector((state)=>{
+    //   return state.customer
+    // })
+    // const  products = useSelector((state)=>{
+    //   return state.product
+    // })
+    // const  account = useSelector((state)=>{
+    //   return state.user
+    // })
+ 
+      const isTokenFound = localStorage.hasOwnProperty('token')
 
-     useEffect(()=>{
-       if(products.length > 0 || customers.length > 0 || bills.length>0 || Object.keys(account).length>0){
-           setIsLoading(false)
-       }
-     },[customers , products , bills])
-     
+      const handleAuth=()=>{
+        setToggle(!toggle)
+     } 
+
+     const dispatch = useDispatch()
+            useEffect(()=>{
+              if(isTokenFound){
+                dispatch(asyncInitialUserDetailsFetch(setIsLoading))
+              } else {
+                setIsLoading(!isLoading)
+              }
+            },[setIsLoading])
+
      useEffect(()=>{
       if ( localStorage.getItem('token')) {
         handleAuth()
       }
-       
-     },[])
+       },[])
      // eslint-disable-next-line
   return (
     

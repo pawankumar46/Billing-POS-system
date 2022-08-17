@@ -31,9 +31,14 @@ const Customer = (props) => {
 
   return (
     <div  >
-        
-         <div  >
-           <form onSubmit={formik.handleSubmit}>
+         {nam || info ? (
+          
+             <div>
+              <div className='modal-header'> 
+                  <h5 style={{textAlign : 'center'}}> Edit-Form</h5>
+              </div>
+             
+             <form onSubmit={formik.handleSubmit}>
             <label>Name</label> <br/>
             <input type='text' value={formik.values.name} name='name' 
             placeholder='Enter your name'
@@ -50,7 +55,30 @@ const Customer = (props) => {
 
               <input type='submit' value='Add' />
            </form>
-         </div>
+           </div>
+          
+         ) : (
+          <div  >
+          <form onSubmit={formik.handleSubmit}>
+           <label>Name</label> <br/>
+           <input type='text' value={formik.values.name} name='name' 
+           placeholder='Enter your name'
+           onChange={formik.handleChange}/> <br/> <br/>
+
+           <label>Mobile</label><br/>
+           <input type='text' value={formik.values.mobile} name='mobile'
+           placeholder='Enter your number' 
+           onChange={formik.handleChange}/> <br/> <br/>
+
+           <label>Email</label><br/>
+           <input type='text' value={formik.values.email} name='email' placeholder='Enter your Email'
+             onChange={formik.handleChange}/> <br/> <br/>
+
+             <input type='submit' value='Add' />
+          </form>
+        </div>
+         )}
+        
          
     </div>
   )

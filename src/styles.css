@@ -44,6 +44,7 @@
    color: inherit;
    font-size: larger;
    word-spacing: 0px;
+   font-family  :Verdana, Geneva, Tahoma, sans-serif;
    }
   .Link:hover {
     text-decoration-style :wavy;

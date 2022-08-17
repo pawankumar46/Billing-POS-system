@@ -38,12 +38,14 @@ const ProductItem = (props) => {
                               <h5>Item - {name}</h5>
                               <h6>Cost - <i className="fa fa-inr"></i> {price}</h6>
                                  <div className='card-info'>
-                               <div className='start'>  <p> <button className='btn btn-4' onClick={()=>{
-                                    handleRemove(_id)
-                                 }}><i className="bi bi-trash3-fill"></i></button> </p> </div>
-                                <div className='end'> 
+                               
+                                <div > 
                                 <p> <button className='btn btn-4' onClick={handleToggle}><i className="bi bi-pencil-fill"></i></button></p>
                                   </div>
+                                  <div className='start'>  <p> <button className='btn btn-4' onClick={()=>{
+                                    handleRemove(_id)
+                                 }}><i className="bi bi-trash3-fill"></i></button> </p> 
+                                 </div>
                                  </div>
                      
                 
