@@ -28,6 +28,7 @@ export const userInfo=(data)=>{
      return {
         type : 'USER_GET',
         payload : data
+        
      }
 }
 
